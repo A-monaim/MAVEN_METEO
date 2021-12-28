@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+		<title> Blog </title>
+		<meta http-equiv ="Content-Type" content ="text/html; charset =UTF-8" />
+		<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}" />
+		<link href="../static/css/Layout.css" th:href="@{/css/boot.css}" rel="stylesheet" />
+</head>
+
+<body>
+	<header>
+		<nav  th:insert="~{fragments :: my-fragment1}"></nav>
+	</header>
+	<main role="main">
+		<section class="jumbotron ">
+		<h2>Résultat:</h2>
+		<ul th:each="Properties:${prop}">
+			<li th:text="'Adresse : ' + ${prop.label} "/>
+		</ul>
+		<h3>Lundi:</h3>
+			<ul th:each="Forecast:${forc0}">
+				<li th:text="'Température min : ' + ${forc0.tmin} + '%'  " />
+				<li th:text="'Température max : ' + ${forc0.tmax} + '%' "  />
+			</ul>
+		<h3>Mardi:</h3>
+			<ul th:each="Forecast:${forc1}">
+				<li th:text="'Température min : ' + ${forc1.tmin} + '%' "  />
+				<li th:text="'Température max : ' + ${forc1.tmax} + '%'  " />
+			</ul>
+		<h3>Mercredi:</h3>
+			<ul th:each="Forecast:${forc2}">
+				<li th:text="'Température min : ' + ${forc2.tmin} + '%' "  />
+				<li th:text="'Température max : ' + ${forc2.tmax} + '%' " />
+			</ul>
+		<h3>Jeudi:</h3>
+			<ul th:each="Forecast:${forc3}">
+				<li th:text="'Température min : ' + ${forc3.tmin} + '%' "/>
+				<li th:text="'Température max : ' + ${forc3.tmax} + '%' " />
+			</ul>
+		<h3>Vendredi:</h3>
+			<ul th:each="Forecast:${forc4}">
+				<li th:text="'Température min : ' + ${forc4.tmin} + '%' " />
+				<li th:text="'Température max : ' + ${forc4.tmax} + '%' " />
+			</ul>
+		<h3>Samedi:</h3>
+			<ul th:each="Forecast:${forc5}">
+				<li th:text="'Température min : ' + ${forc5.tmin} + '%' "  />
+				<li th:text="'Température max : ' + ${forc5.tmax} + '%' "  />
+			</ul>
+		<h3>Dimanche:</h3>
+			<ul th:each="Forecast:${forc6}">
+				<li th:text="'Température min : ' + ${forc6.tmin} + '%' " />
+				<li th:text="'Température max : ' + ${forc6.tmax} + '%' " />
+			</ul>
+		</section>
+	</main>
+</body>
+
+</html>
